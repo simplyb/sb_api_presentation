@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+  <title>My Page</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.css" />
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script src="http://code.jquery.com/mobile/1.1.0-rc.1/jquery.mobile-1.1.0-rc.1.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page">
+
+  <div data-role="header">
+    <h1>Active Life</h1>
+  </div><!-- /header -->
+
+  <div data-role="content"> 
+  <ul data-role="listview" data-inset="true" data-filter="true">
+    <li><a href="#foo" data-transition="flip">Play Basketball at 6pm</a></li>
+    <li><a href="#">Go Running tomorrow at 5pm</a></li>
+    <li><a href="#">Soccer 5pm</a></li>
+  </ul>
+  </div><!-- /content -->
+
+</div><!-- /page -->
+<!-- Start of first page -->
+<div data-role="page" id="foo">
+
+  <div data-role="header">
+    <h1>Foo</h1>
+  </div><!-- /header -->
+
+  <div data-role="content"> 
+    <p>I'm first in the source order so I'm shown as the page.</p>    
+    <p>View internal page called <a href="#bar">bar</a></p> 
+  </div><!-- /content -->
+
+  <div data-role="footer">
+    <h4>Page Footer</h4>
+  </div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
