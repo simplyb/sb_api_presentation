@@ -42,4 +42,6 @@ class User
   validates_format_of :username, :with => USERNAME_REGEX
   validates_format_of :email, :with => EMAIL_REGEX
   validates_uniqueness_of :username, :email, :case_sensitive => false
+  
+  embeds_many :locations
 end
