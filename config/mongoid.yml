@@ -1,10 +1,12 @@
 development:
   host: localhost
   database: active_life_development
+  port: 27017
 
 test:
   host: localhost
   database: active_life_test
+  port: 27017
 
 # set these environment variables on your prod server
 production:

@@ -1,5 +1,5 @@
-class HomeController < ApplicationController
+class HomeController < AuthenticatedController
   def show
-    render :text => "hello world"
+    render :text => "Home Controller"
   end
 end

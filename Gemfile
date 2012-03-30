@@ -57,4 +57,5 @@ gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "bson_ext", ">= 1.6.1"
 gem "mongoid", ">= 2.4.6"
 gem "devise", ">= 2.0.4"
+gem "omniauth"
 gem "bootstrap-sass", ">= 2.0.1"
