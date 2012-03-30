@@ -16,3 +16,8 @@ puts 'USS Enterprise Listing:'
   user = User.create! :username => name, :email => email, :password => password, :password_confirmation => password
   puts "Crew Member: #{name}, email: #{email}, password: #{password}"
 }
+
+
+puts 'SEEDING THE DATABASE - CREATING Events'
+event = Event.create! :activity_time => "2012-04-23:00:00", :activity_type => "Kirks falls in love, AGAIN"
+puts "Event Type: #{event.activity_type}, Event Time: #{event.activity_time}"

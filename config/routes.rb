@@ -1,6 +1,16 @@
 ActiveLife::Application.routes.draw do
   devise_for :users
 
+  match 'event/:id' => 'event#show'
+  match 'events/' => 'event#index'
+  match 'event/' => 'event#create'
+  match 'events/find_nearby_events' => 'event#find_nearby_events'
+  
+  match 'location/:id' => 'location#show'
+  match 'locations/' => 'location#index'
+  match 'location/' => 'location#create'
+  match 'locations/find_nearby_locations' => 'location#find_nearby_locations'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
