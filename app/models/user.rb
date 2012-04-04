@@ -1,5 +1,7 @@
 class User
   include Mongoid::Document
+  include Mongoid::Timestamps
+  include ::GeoLocation
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
@@ -24,6 +26,7 @@ class User
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
 
+  field :karma, :type => Integer, :default => 0
 
   # # Confirmable
   # field :confirmation_token,   :type => String
@@ -42,6 +45,4 @@ class User
   validates_format_of :username, :with => USERNAME_REGEX
   validates_format_of :email, :with => EMAIL_REGEX
   validates_uniqueness_of :username, :email, :case_sensitive => false
-  
-  embeds_many :locations
 end

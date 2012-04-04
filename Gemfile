@@ -48,6 +48,7 @@ gem "guard", ">= 0.6.2", :group => :development  # need newline here!
 
 gem 'rb-fsevent', :group => :development
 gem 'growl', :group => :development
+gem 'rabl'
  
 
 gem "guard-bundler", ">= 0.1.3", :group => :development
