@@ -14,6 +14,8 @@ class EventsController < AuthenticatedController
   
   def create
     @event = Event.new(params[:event])
+    puts params
+    puts "test"
     if @event.save
      render("events/_event")
     else
@@ -45,5 +47,13 @@ class EventsController < AuthenticatedController
     render :text => "Nearby Events!"
     
   end
+  
+  def verified_request?
+      if request.content_type == "application/json"
+        true
+      else
+        super()
+      end
+   end
 
 end

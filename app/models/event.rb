@@ -7,5 +7,7 @@ class Event
   field :activity_type, :type => String
   field :username
   
+  attr_accessible :tweet, :activity_time, :activity_type
+  
   embeds_many :users
 end
