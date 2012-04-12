@@ -1,3 +1,3 @@
 object @event
-attributes :tweet, :activity_time, :activity_type, :username
+attributes :id, :tweet, :activity_time, :activity_type, :username
 extends 'locations/_location'
