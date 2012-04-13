@@ -3,7 +3,6 @@ class EventsController < AuthenticatedController
   def index
     #Show all Events
     @events = Event.all(limit: 5).order_by([:created_at, :desc])
-    puts @events.to_json
     render("events/index")
   end
   
@@ -15,8 +14,6 @@ class EventsController < AuthenticatedController
   
   def create
     @event = Event.new(params[:event])
-    puts params
-    puts "test"
     if @event.save
      render("events/_event")
     else
