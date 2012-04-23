@@ -5,7 +5,7 @@ class User
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :token_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   ## Database authenticatable
@@ -25,6 +25,9 @@ class User
   field :last_sign_in_at,    :type => Time
   field :current_sign_in_ip, :type => String
   field :last_sign_in_ip,    :type => String
+
+  ## Token authenticatable
+  field :authentication_token, :type => String
 
   field :karma, :type => Integer, :default => 0
 

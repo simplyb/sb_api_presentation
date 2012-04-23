@@ -1,5 +1,5 @@
 class Auth::SessionsController < Devise::SessionsController
-  include Devise::Controllers::InternalHelpers
+  #include Devise::Controllers::InternalHelpers
 
   # POST /resource/sign_in
   def create
