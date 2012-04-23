@@ -12,7 +12,7 @@ class Auth::SessionsController < Devise::SessionsController
       format.json {
         current_user.reset_authentication_token!
         data = {
-          :current_user => current_user.to_rabl({:root => false, :scope => {:self => true}}),
+          :current_user => {:id => current_user.id, :username => current_user.username, :email => current_user.email},
           :auth_token => current_user.authentication_token,
           :success => true
         }

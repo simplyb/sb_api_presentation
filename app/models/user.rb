@@ -1,4 +1,4 @@
-class User
+class User < Base
   include Mongoid::Document
   include Mongoid::Timestamps
   include ::GeoLocation

@@ -1,24 +1,29 @@
-module ToRabl
-  #dummy scope creation object
-  class Scope
+class Base
+    #dummy scope creation object
+  class RablScope
+
+    def view_paths
+      "app/views"
+    end
+
   end
   
   def to_rabl(options={}, &block)
 
     #fabricate scope
+    scope = RablScope.new
     if options[:scope]
-      scope = Scope.new
-      options[:scope].each_pari do |key, vaue|
+      options[:scope].each_pair do |key, value|
         scope.instance_variable_set("@#{key.to_s}", value)
       end
     end
 
     #set the object to the caller
-    options.merge!(:object => self)
+    options.merge!({:object => self, :view_path => "app/views"})
     
     #create a builder with the scope
-    builder = Rabl::Builder.new(nil, { :format => "json", :scope => scope})
-    obj_hash = builder.partial("#{self.rabl_template_dir}/#{api_folder}_#{self.rabl_template}", options, &block)
+    builder = Rabl::Builder.new({ :format => "json" })
+    obj_hash = builder.partial("#{self.rabl_template_dir}/_#{self.rabl_template}", options, &block)
 
   end
 
@@ -30,8 +35,4 @@ module ToRabl
     @rabl_template_dir ||= self.rabl_template.pluralize
   end
 
-end
-
-class ActiveRecord::Base
-  self.send(:include, ToRabl)
 end

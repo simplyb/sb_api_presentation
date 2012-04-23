@@ -1,4 +1,4 @@
-class Event
+class Event < Base
   include Mongoid::Document
   include Mongoid::Timestamps
   include ::GeoLocation

@@ -1,4 +1,4 @@
-class Location
+class Location < Base
   include Mongoid::Document
   include Mongoid::Timestamps
   include ::GeoLocation
