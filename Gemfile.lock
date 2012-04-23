@@ -36,6 +36,7 @@ GEM
     bson_ext (1.6.1)
       bson (~> 1.6.1)
     builder (3.0.0)
+    chunky_png (1.2.5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -43,6 +44,10 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
+    compass (0.12.1)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     database_cleaner (0.7.2)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
@@ -66,6 +71,7 @@ GEM
       factory_girl (~> 3.0.0)
       railties (>= 3.0.0)
     ffi (1.0.11)
+    fssm (0.2.9)
     growl (1.0.3)
     guard (1.0.1)
       ffi (>= 0.5.0)
@@ -179,6 +185,7 @@ DEPENDENCIES
   bootstrap-sass (>= 2.0.1)
   bson_ext (>= 1.6.1)
   coffee-rails (~> 3.2.1)
+  compass
   database_cleaner (>= 0.7.1)
   devise (>= 2.0.4)
   email_spec (>= 1.2.1)

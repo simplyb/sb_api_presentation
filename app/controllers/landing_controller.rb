@@ -1,5 +1,5 @@
 class LandingController < ApplicationController
+  layout 'mobile'
   def show
-    render :text => "Landing Page"
   end
 end
