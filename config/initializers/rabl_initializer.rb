@@ -1,7 +1,9 @@
+# config/initializers/rabl_init.rb
 Rabl.configure do |config|
   # Commented as these are defaults
   # config.cache_all_output = false
   # config.cache_sources = false
+  # config.escape_all_output = false
   # config.json_engine = nil # Any multi\_json engines
   # config.msgpack_engine = nil # Defaults to ::MessagePack
   # config.bson_engine = nil # Defaults to ::BSON
@@ -13,4 +15,5 @@ Rabl.configure do |config|
   # config.include_xml_root  = false
   # config.enable_json_callbacks = false
   # config.xml_options = { :dasherize  => true, :skip_types => false }
+  config.view_paths = ["app/views"]
 end

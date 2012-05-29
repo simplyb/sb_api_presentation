@@ -1,3 +1,0 @@
-[submodule "public/mobile"]
-	path = public/mobile
-	url = git@github.com:simplyb/active-mobile.git

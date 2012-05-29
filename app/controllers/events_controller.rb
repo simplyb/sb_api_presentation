@@ -1,42 +1,34 @@
 class EventsController < AuthenticatedController
+  respond_to :json
 
   def index
     #Show all Events
     @events = Event.all(limit: 5).order_by([:created_at, :desc])
-    render("events/index")
+    respond_with(@events)
   end
   
   def show
     #Show all Events
     @event = Event.find(params[:id])
-    render("events/_event")
+    respond_with(@event)
   end
   
   def create
     @event = Event.new(params[:event])
-    if @event.save
-     render("events/_event")
-    else
-      render :json => {:success => false, :errors => @event.errors} 
-    end
+    @event.save
+    respond_with(@event)
   end
 
   def update
     @event = Event.find(params[:id])
-    if @event.update_attributes(params[:event])
-     render("events/_event")
-    else
-      render :json => {:success => false, :errors => @event.errors}
-    end
+    @event.update_attributes(params[:event])
+    respond_with(@event)
   end
 
   def destroy
     @event = Event.find(params[:id])
-    if @event.destroy
-      render :json => {:success => true}
-    else
-      render :json => {:success => false, :errors => @event.errors}
-    end
+    @event.destroy
+    respond_with(@event)
   end
   
   def find_nearby_events()
@@ -47,11 +39,11 @@ class EventsController < AuthenticatedController
   end
   
   def verified_request?
-      if request.content_type == "application/json"
-        true
-      else
-        super()
-      end
+    if request.content_type == "application/json"
+      true
+    else
+      super()
+    end
    end
 
 end

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   def index
-    #Show all Events
+    #Show all Users
     @users = User.all(limit: 5).order_by([:created_at, :desc])
-    render("users/index")
   end
 end

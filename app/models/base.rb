@@ -19,7 +19,7 @@ class Base
     end
 
     #set the object to the caller
-    options.merge!({:object => self, :view_path => "app/views"})
+    options.merge!({:object => self})
     
     #create a builder with the scope
     builder = Rabl::Builder.new({ :format => "json" })

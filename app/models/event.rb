@@ -5,9 +5,9 @@ class Event < Base
   field :tweet, :type => String
   field :activity_time, :type => String
   field :activity_type, :type => String
-  field :username
+  field :username, :type => String
   
-  attr_accessible :tweet, :activity_time, :activity_type
+  attr_accessible :tweet, :activity_time, :activity_type, :username
   
   embeds_many :users
 end

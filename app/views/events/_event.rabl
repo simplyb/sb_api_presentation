@@ -1,3 +1,7 @@
 object @event
+cache @event
 attributes :id, :tweet, :activity_time, :activity_type, :username
-extends 'locations/_location'
+
+child :users, :root => true do
+  extends 'users/_user'
+end
