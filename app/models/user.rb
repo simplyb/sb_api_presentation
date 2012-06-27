@@ -3,6 +3,8 @@ class User < Base
   include Mongoid::Timestamps
   include ::GeoLocation
 
+  has_and_belongs_to_many :events
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :token_authenticatable,
@@ -31,11 +33,6 @@ class User < Base
 
   field :karma, :type => Integer, :default => 0
 
-  # # Confirmable
-  # field :confirmation_token,   :type => String
-  # field :confirmed_at,         :type => Time
-  # field :confirmation_sent_at, :type => Time
-  # field :unconfirmed_email,    :type => String # Only if using reconfirmable
 
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
 

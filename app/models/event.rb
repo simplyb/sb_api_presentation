@@ -9,5 +9,5 @@ class Event < Base
   
   attr_accessible :tweet, :activity_time, :activity_type, :username
   
-  embeds_many :users
+  has_and_belongs_to_many :users
 end

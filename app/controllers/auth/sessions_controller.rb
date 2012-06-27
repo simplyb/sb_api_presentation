@@ -21,7 +21,7 @@ class Auth::SessionsController < Devise::SessionsController
       }
 
       format.html {
-        respond_with resource, :location => after_sign_in_path_for(resource) + params[:hash_bang]
+        respond_with resource, :location => after_sign_in_path_for(resource)
       }
 
     end

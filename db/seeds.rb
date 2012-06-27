@@ -18,6 +18,8 @@ puts 'USS Enterprise Listing:'
   event = Event.create! :username => name, 
                         :activity_time => 1.week.ago, 
                         :activity_type => "#{name.capitalize} falls in love, AGAIN"
+  event.users << user
+  event.save
 
   puts "Event Type: #{event.activity_type}, Event Time: #{event.activity_time}, Event User: #{event.username}"
 }

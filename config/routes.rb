@@ -11,6 +11,7 @@ ActiveLife::Application.routes.draw do
     end
 
     resources :locations, :except => [:new, :edit]
+    resources :users, :except => [:new, :edit]
   end
   root :to => "landing#show"
 end
